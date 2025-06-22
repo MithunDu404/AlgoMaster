@@ -18,7 +18,7 @@
     background-color: aliceblue;
     margin-top: 6px;
     margin-right: 5px;
-    padding: 2px 1px;
+    padding: 1px 1px;
     border-radius: 30%;
 }
 .logo-name{
@@ -28,20 +28,35 @@
 }
 
 .nav-links{
-    /* background-color:#223649; */
-    /* padding: 0 3rem; */
     list-style: none;
     display: flex;
-    gap: 70px;
+    gap: 30px;
 }
 
 .nav-links li{
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    position: relative;
+    z-index: 0;
 }
 .nav-links li:hover{
-    background-color: #223649;
+    color: black;
+}
+.nav-links li::after{
+    content: '';
+    background: linear-gradient(to right,rgb(52, 190, 244),rgb(42, 71, 113));
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    z-index: -1;
+    transition: 200ms ease-in-out;
+}
+.nav-links li:hover::after{
+    width: 100%;
+    border: solid 1px rgb(70, 111, 248);
 }
 
 .nav-links a{
@@ -54,5 +69,5 @@
 }
 
 .nav-links a:hover{
-    color:rgb(255, 200, 127)
+    color:rgb(0, 0, 0)
 }
