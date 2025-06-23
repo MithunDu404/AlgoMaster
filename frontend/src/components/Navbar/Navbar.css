@@ -1,12 +1,22 @@
 .navbar{
+    width: 100%;
     background-color: #101a23;
     color:aliceblue;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 7rem;
+    padding: 1rem 10%;
     border-bottom: #223649 solid 2px;
+    position: fixed;
+    z-index: 100;
     /* box-shadow: 2px 4px 6px hsl(0, 0%, 20%); */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
 }
 
 .nav-logo{
@@ -34,7 +44,7 @@
 }
 
 .nav-links li{
-    padding: 0.3rem 0.8rem;
+    padding: 0.2rem 0.8rem;
     border-radius: 5px;
     position: relative;
     z-index: 0;
@@ -44,7 +54,7 @@
 }
 .nav-links li::after{
     content: '';
-    background: linear-gradient(to right,rgb(52, 190, 244),rgb(42, 71, 113));
+    background: linear-gradient(to right, #6366f1,rgb(70, 117, 183));
     position: absolute;
     height: 100%;
     width: 0;

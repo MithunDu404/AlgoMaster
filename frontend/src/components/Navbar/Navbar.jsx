@@ -6,13 +6,14 @@ function Navbar(){
         <nav className="navbar">
             <div className='nav-logo'>
                 <img className="logo-img" src={brainCircuitImg} alt="hi" />
-                <div className="logo-name">web.logo</div>
+                <div className="logo-name">AlgoMaster</div>
             </div>
             <ul className='nav-links'>
                 <li><a href="/">Home</a></li>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Learning Center</a></li>
+                <li><a href="/">Visualize</a></li>
+                <li><a href="/">Compete</a></li>
+                <li><a href="/">Sign In</a></li>
             </ul>
         </nav>
     );
