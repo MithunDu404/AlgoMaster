@@ -1,26 +1,22 @@
 .navbar{
     width: 100%;
-    background-color: #101a23;
     color:aliceblue;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10%;
-    border-bottom: #223649 solid 2px;
+    padding-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     position: fixed;
     z-index: 100;
-    /* box-shadow: 2px 4px 6px hsl(0, 0%, 20%); */
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem 0;
-    }
 }
 
 .nav-logo{
     display:flex;
+    background-color: rgba(3, 1, 1, 0.336);
+    padding: 0px 5px;
+    border-radius: 10px;
+
 }
 
 .logo-img{
@@ -35,49 +31,4 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-transform:uppercase;
-}
-
-.nav-links{
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links li{
-    padding: 0.2rem 0.8rem;
-    border-radius: 5px;
-    position: relative;
-    z-index: 0;
-}
-.nav-links li:hover{
-    color: black;
-}
-.nav-links li::after{
-    content: '';
-    background: linear-gradient(to right, #6366f1,rgb(70, 117, 183));
-    position: absolute;
-    height: 100%;
-    width: 0;
-    top: 0;
-    left: 0;
-    border-radius: 5px;
-    z-index: -1;
-    transition: 200ms ease-in-out;
-}
-.nav-links li:hover::after{
-    width: 100%;
-    border: solid 1px rgb(70, 111, 248);
-}
-
-.nav-links a{
-    color: aliceblue;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover{
-    color:rgb(0, 0, 0)
 }

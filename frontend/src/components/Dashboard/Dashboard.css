@@ -1,24 +1,30 @@
 .dashboard {
-  background: linear-gradient(135deg, #1a1d29 0%, #202733 100%);
+  background-color: rgb(2, 77, 83);
+  background-image: url("https://www.transparenttextures.com/patterns/mbossed.png");
   color: white;
-  display: flex;
-  /* flex-direction: column; */
   padding-top: 70px;
 }
 
 /* Hero Section */
 .hero-section {
-  position: relative;
+  position: relative; 
   display: flex;
-  /* align-items: center; */
+  min-height: 400px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
-  background-color: #018266;
-  background-image: url("https://www.transparenttextures.com/patterns/grid-me.png");
+  border-radius: 10px;
+  background-image: '../../assets/hero-bg.png';
 }
 
 .hero-content {
   position: relative;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
   text-align: center;
   max-width: 800px;
@@ -26,9 +32,8 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,11 +67,6 @@
 }
 
 /* Modules Section */
-.modules-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 .section-title {
   font-size: 2.5rem;
@@ -76,9 +76,7 @@
 }
 
 .modules-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .module-card {
@@ -86,6 +84,8 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
+  margin-left: 15%;
+  margin-right: 15%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,7 +101,7 @@
 
 .module-content {
   flex: 1;
-  max-width: 60%;
+  max-width: 80%;
 }
 
 .module-title {
@@ -143,76 +143,10 @@
   justify-content: center;
 }
 
-/* Algorithm Visualization */
-.visualization-bars {
-  display: flex;
-  align-items: end;
-  gap: 2px;
-  height: 80px;
-}
-
-.bar {
-  width: 4px;
-  background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
-  border-radius: 2px;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.bar:nth-child(odd) {
-  animation-delay: 0.1s;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
 /* Learning Center Visual */
 .learning-visual {
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   border-radius: 12px;
-}
-
-.brain-icon {
-  width: 60px;
-  height: 60px;
-  position: relative;
-}
-
-.brain-left,
-.brain-right {
-  width: 30px;
-  height: 60px;
-  background: white;
-  border-radius: 30px 0 0 30px;
-  position: absolute;
-}
-
-.brain-left {
-  left: 0;
-}
-
-.brain-right {
-  right: 0;
-  transform: scaleX(-1);
-}
-
-.brain-left::before,
-.brain-right::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #fbbf24;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* Game Mode Visual */
@@ -221,70 +155,7 @@
   border-radius: 12px;
 }
 
-.game-controller {
-  width: 80px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.controller-body {
-  width: 70px;
-  height: 45px;
-  background: #374151;
-  border-radius: 12px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.d-pad {
-  width: 20px;
-  height: 20px;
-  background: #6b7280;
-  border-radius: 3px;
-  position: relative;
-}
-
-.d-pad::before,
-.d-pad::after {
-  content: "";
-  position: absolute;
-  background: #4b5563;
-}
-
-.d-pad::before {
-  width: 12px;
-  height: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.d-pad::after {
-  width: 4px;
-  height: 12px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.buttons {
-  display: flex;
-  gap: 4px;
-}
-
-.button {
-  width: 8px;
-  height: 8px;
-  background: #6b7280;
-  border-radius: 50%;
-}
-
-/* Responsive Design */
+/* Responsive Design
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
@@ -313,4 +184,4 @@
   .modules-grid {
     gap: 2.5rem;
   }
-}
+} */

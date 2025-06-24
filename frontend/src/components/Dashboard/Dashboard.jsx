@@ -7,7 +7,9 @@ const Dashboard = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Visualize. Learn. Compete.</h1>
+          <h1 className="hero-title">Visualize.</h1>
+          <h1 className="hero-title">Learn.</h1>
+          <h1 className="hero-title">Compete.</h1>
           <p className="hero-subtitle">
             Master algorithms through interactive visualizations, engaging lessons, and competitive challenges.
           </p>
@@ -29,17 +31,6 @@ const Dashboard = () => {
               </p>
               <button className="module-btn">Explore</button>
             </div>
-            <div className="module-visual">
-              <div className="visualization-bars">
-                {Array.from({ length: 20 }, (_, i) => (
-                  <div 
-                    key={i} 
-                    className="bar" 
-                    style={{ height: `${Math.random() * 60 + 20}px` }}
-                  ></div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Learning Center Module */}
@@ -51,12 +42,6 @@ const Dashboard = () => {
               </p>
               <button className="module-btn">Learn</button>
             </div>
-            <div className="module-visual learning-visual">
-              <div className="brain-icon">
-                <div className="brain-left"></div>
-                <div className="brain-right"></div>
-              </div>
-            </div>
           </div>
 
           {/* Game Mode Module */}
@@ -67,17 +52,6 @@ const Dashboard = () => {
                 Challenge yourself with algorithm-based games and compete with other learners.
               </p>
               <button className="module-btn">Play</button>
-            </div>
-            <div className="module-visual game-visual">
-              <div className="game-controller">
-                <div className="controller-body">
-                  <div className="d-pad"></div>
-                  <div className="buttons">
-                    <div className="button"></div>
-                    <div className="button"></div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
