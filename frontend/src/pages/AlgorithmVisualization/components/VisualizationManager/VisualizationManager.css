@@ -1,0 +1,16 @@
+.visualization-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.visualization-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #64a1de;
+  border-radius: 8px;
+  min-height: 400px;
+}

@@ -9,7 +9,7 @@ function NavlinksS({ onClose }) {
                 </svg></li>
                 <li><Link to="/" onClick={onClose}>About</Link></li>
                 <li><Link to="/learning" onClick={onClose}>Learning Center</Link></li>
-                <li><Link to="/" onClick={onClose}>Visualize</Link></li>
+                <li><Link to="/visualize" onClick={onClose}>Visualize</Link></li>
                 <li><Link to="/" onClick={onClose}>Compete</Link></li>
                 <li><Link to="/" onClick={onClose}>Sign In</Link></li>
             </ul>

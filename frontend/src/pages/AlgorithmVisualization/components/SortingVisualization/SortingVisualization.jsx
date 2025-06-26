@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './SortingVisualization.css';
 
 const SortingVisualization = ({ 
@@ -6,17 +6,36 @@ const SortingVisualization = ({
   animationSteps, 
   currentStep 
 }) => {
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0); // fallback width
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+    const timer = setTimeout(updateWidth, 10);
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () =>{
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateWidth);
+    };
+  }, []);
+
   const currentData = animationSteps[currentStep];
   if (!currentData) return null;
 
   const maxValue = Math.max(...currentData.array);
-  const barWidth = Math.max(600 / currentData.array.length - 2, 20);
   const gap = 2;
+  const availableWidth = containerWidth - (gap * (currentData.array.length - 1));
+  const barWidth = Math.max(availableWidth / currentData.array.length, 20);
   const totalBarWidth = barWidth + gap;
   
   return (
     <div className="sorting-visualization">
-      <div className="bars-container">
+      <div className="bars-container" ref={containerRef}>
         {currentData.array.map((value, index) => (
           <div
             key={index}

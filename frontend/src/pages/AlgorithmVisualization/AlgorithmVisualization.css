@@ -1,6 +1,6 @@
 .algorithm-visualization {
   min-height: 100vh;
-  background: #4f8deb;
+  background-image: url("https://www.transparenttextures.com/patterns/mbossed.png");
   padding: 20px;
   padding-top: 60px;
 }
@@ -18,17 +18,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-}
-
-.visualization-area {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px dashed #64a1de;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  min-height: 400px;
+  gap: 20px;
 }
 
 @media (max-width: 1200px) {
