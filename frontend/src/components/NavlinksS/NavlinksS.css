@@ -46,6 +46,12 @@
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+.side-links .close-icon {
+    padding: 0.2rem 0.8rem;
 }
 
 .close-icon{

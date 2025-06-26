@@ -8,15 +8,16 @@
     padding-left: 5%;
     padding-right: 5%;
     position: fixed;
-    z-index: 100;
+    z-index: 100; 
 }
 
 .nav-logo{
     display:flex;
-    background-color: rgba(3, 1, 1, 0.336);
     padding: 0px 5px;
-    border-radius: 10px;
-
+    background-color: rgba(228, 226, 226, 0.218);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.4);
 }
 
 .logo-img{

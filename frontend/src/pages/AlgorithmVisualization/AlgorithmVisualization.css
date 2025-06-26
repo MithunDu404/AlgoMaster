@@ -1,0 +1,38 @@
+.algorithm-visualization {
+  min-height: 100vh;
+  background: #4f8deb;
+  padding: 20px;
+  padding-top: 60px;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+.center-panel {
+  flex: 2;
+  background: rgb(114, 70, 70);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.visualization-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #64a1de;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  min-height: 400px;
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    flex-direction: column;
+  }
+}

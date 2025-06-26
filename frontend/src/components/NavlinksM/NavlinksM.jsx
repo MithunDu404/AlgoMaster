@@ -18,7 +18,7 @@ function NavlinksM(){
             <ul className='nav-links'>
                 <li className='menu-links'><Link to="/">About</Link></li>
                 <li className='menu-links'><Link to="/learning">Learning Center</Link></li>
-                <li className='menu-links'><Link to="/">Visualize</Link></li>
+                <li className='menu-links'><Link to="/visualize">Visualize</Link></li>
                 <li className='menu-links'><Link to="/">Compete</Link></li>
                 <li className='menu-links'><Link to="/">Sign In</Link></li>
                 {!isSidebarVisible && (

@@ -1,0 +1,9 @@
+.explanation-panel {
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 16px;
+  min-height: 60px;
+  font-weight: bold;
+  background: #f8f9fa;
+}
