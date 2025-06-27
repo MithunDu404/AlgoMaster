@@ -3,7 +3,7 @@ import './AlgorithmMenu.css';
 
 const AlgorithmMenu = ({ 
   selectedCategory, 
-  setSelectedCategory, 
+  setSelectedCategory,  
   selectedAlgorithm, 
   setSelectedAlgorithm 
 }) => {

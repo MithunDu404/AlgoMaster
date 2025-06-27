@@ -1,26 +1,61 @@
 .input-section {
   display: flex;
+  flex-direction: column;
   gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   align-items: center;
 }
 
-.input-section input {
-  flex: 1;
+.input-section input[type="text"] {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  width: 80%;
+  max-width: 400px;
 }
 
 .input-section button {
   padding: 10px 20px;
-  background: #28a745;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 16px;
 }
 
 .input-section button:hover {
-  background: #218838;
+  background-color: #0056b3;
+}
+
+.random-array-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.random-array-controls input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80px; /* Adjust width as needed */
+  text-align: center;
+}
+
+.random-array-controls button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.random-array-controls button:hover {
+  background-color: #218838;
 }
