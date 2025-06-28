@@ -10,11 +10,11 @@
 .bars-container {
   display: flex;
   align-items: end;
-  justify-content: center;
   gap: 2px;
   height: 300px;
   position: relative;
   width: 100%;
+  max-width: 1200px;
 }
 
 .bar {
@@ -27,27 +27,57 @@
   transition: all 0.3s ease;
 }
 
+/* Common states */
 .bar.comparing {
   background: #ffc107;
+  box-shadow: 0 0 5px 1px rgba(255, 193, 7, 0.7);
 }
 
 .bar.swapping {
   background: #dc3545;
   transform: scale(1.1);
   z-index: 3;
+  box-shadow: 0 0 8px 2px rgba(220, 53, 69, 0.7);
 }
 
 .bar.current-max {
   background: #28a745 !important;
   z-index: 2;
+  box-shadow: 0 0 8px 2px rgba(40, 167, 69, 0.7);
 }
 
+/* Algorithm-specific states */
+/* Merge Sort */
 .bar.splitting-range {
   background: #17a2b8;
+  box-shadow: 0 0 5px 1px rgba(23, 162, 184, 0.7);
 }
 
 .bar.merging-range {
   background: #6f42c1;
+  box-shadow: 0 0 5px 1px rgba(111, 66, 193, 0.7);
+}
+
+/* Insertion Sort */
+.bar.key-element {
+  background: #ff00ff;
+  box-shadow: 0 0 8px 2px rgba(255, 0, 255, 0.7);
+}
+
+/* Selection Sort */
+.bar.min-element {
+  background: #17a2b8;
+  box-shadow: 0 0 8px 2px rgba(23, 162, 184, 0.7);
+}
+
+/* Quick Sort */
+.bar.pivot-element {
+  background: #ff00ff;
+  box-shadow: 0 0 8px 2px rgba(255, 0, 255, 0.7);
+}
+
+.bar.partition-range {
+  background: rgba(23, 162, 184, 0.3);
 }
 
 .bar-value {
@@ -58,6 +88,7 @@
   font-size: 12px;
 }
 
+/* Highlight elements */
 .swap-highlight {
   position: absolute;
   height: 100%;
@@ -65,6 +96,7 @@
   pointer-events: none;
   z-index: 1;
   box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .range-highlight {
@@ -73,13 +105,26 @@
   pointer-events: none;
   z-index: 1;
   box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .range-highlight.splitting {
   border: 3px solid #17a2b8;
+  box-shadow: 0 0 8px 2px rgba(23, 162, 184, 0.5);
 }
 
 .range-highlight.merging {
   border: 3px solid #ff00ff;
   box-shadow: 0 0 8px 2px rgba(255, 0, 255, 0.5);
+}
+
+.partition-highlight {
+  position: absolute;
+  height: 100%;
+  border: 3px solid #17a2b8;
+  pointer-events: none;
+  z-index: 1;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 2px rgba(23, 162, 184, 0.5);
 }

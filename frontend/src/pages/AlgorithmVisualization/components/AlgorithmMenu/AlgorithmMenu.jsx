@@ -33,6 +33,24 @@ const AlgorithmMenu = ({
             >
               Merge Sort
             </button>
+            <button 
+              className={selectedAlgorithm === 'insertionSort' ? 'active' : ''}
+              onClick={() => setSelectedAlgorithm('insertionSort')}
+            >
+              Insertion Sort
+            </button>
+            <button 
+              className={selectedAlgorithm === 'selectionSort' ? 'active' : ''}
+              onClick={() => setSelectedAlgorithm('selectionSort')}
+            >
+              Selection Sort
+            </button>
+            <button 
+              className={selectedAlgorithm === 'quickSort' ? 'active' : ''}
+              onClick={() => setSelectedAlgorithm('quickSort')}
+            >
+              Quick Sort
+            </button>
           </>
         )}
       </div>

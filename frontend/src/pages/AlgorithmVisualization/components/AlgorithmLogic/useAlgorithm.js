@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import useBubbleSort from './useBubbleSort';
 import useMergeSort from './useMergeSort';
+import useInsertionSort from './useInsertionSort';
+import useSelectionSort from './useSelectionSort';
+import useQuickSort from './useQuickSort';
 
 const useAlgorithm = () => {
   const [selectedAlgorithm, setSelectedAlgorithm] = useState('bubbleSort');
@@ -14,18 +17,36 @@ const useAlgorithm = () => {
 
   const { generateSteps: generateBubbleSortSteps } = useBubbleSort();
   const { generateSteps: generateMergeSortSteps } = useMergeSort();
+  const { generateSteps: generateInsertionSortSteps } = useInsertionSort();
+  const { generateSteps: generateSelectionSortSteps } = useSelectionSort();
+  const { generateSteps: generateQuickSortSteps } = useQuickSort();
 
   useEffect(() => {
     let steps = [];
-    if (selectedAlgorithm === 'bubbleSort') {
-      steps = generateBubbleSortSteps(data);
-    } else if (selectedAlgorithm === 'mergeSort') {
-      steps = generateMergeSortSteps(data);
+    switch (selectedAlgorithm) {
+      case 'bubbleSort':
+        steps = generateBubbleSortSteps(data);
+        break;
+      case 'mergeSort':
+        steps = generateMergeSortSteps(data);
+        break;
+      case 'insertionSort':
+        steps = generateInsertionSortSteps(data);
+        break;
+      case 'selectionSort':
+        steps = generateSelectionSortSteps(data);
+        break;
+      case 'quickSort':
+        steps = generateQuickSortSteps(data);
+        break;
+      default:
+        steps = generateBubbleSortSteps(data);
     }
     setAnimationSteps(steps);
     setCurrentStep(0);
     setCurrentExplanation(steps[0]?.explanation || '');
-  }, [selectedAlgorithm, data, generateBubbleSortSteps, generateMergeSortSteps]);
+  }, [selectedAlgorithm, data, generateBubbleSortSteps, generateMergeSortSteps, 
+      generateInsertionSortSteps, generateSelectionSortSteps, generateQuickSortSteps]);
 
   useEffect(() => {
     if (animationSteps.length > 0 && currentStep < animationSteps.length) {

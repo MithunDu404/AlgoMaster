@@ -7,7 +7,7 @@ const SortingVisualization = ({
   currentStep 
 }) => {
   const containerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = useState(0); // fallback width
+  const [containerWidth, setContainerWidth] = useState(0);
 
   useEffect(() => {
     const updateWidth = () => {
@@ -18,7 +18,7 @@ const SortingVisualization = ({
     const timer = setTimeout(updateWidth, 10);
     updateWidth();
     window.addEventListener('resize', updateWidth);
-    return () =>{
+    return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', updateWidth);
     };
@@ -30,7 +30,7 @@ const SortingVisualization = ({
   const maxValue = Math.max(...currentData.array);
   const gap = 2;
   const availableWidth = containerWidth - (gap * (currentData.array.length - 1));
-  const barWidth = Math.max(availableWidth / currentData.array.length, 20);
+  const barWidth = Math.max(availableWidth / currentData.array.length, 1);
   const totalBarWidth = barWidth + gap;
   
   return (
@@ -43,7 +43,11 @@ const SortingVisualization = ({
               currentData.comparing.includes(index) ? 'comparing' :
               currentData.swapping.includes(index) ? 'swapping' :
               (currentData.range && index >= currentData.range[0] && index <= currentData.range[1]) ? 
-                (currentData.mergePhase ? 'merging-range' : 'splitting-range') : ''
+                (currentData.mergePhase ? 'merging-range' : 'splitting-range') :
+              (currentData.partitionRange && index >= currentData.partitionRange[0] && index <= currentData.partitionRange[1]) ? 'partition-range' :
+              (currentData.keyIndex === index) ? 'key-element' :
+              (currentData.minIndex === index) ? 'min-element' :
+              (currentData.pivotIndex === index) ? 'pivot-element' : ''
             } ${currentData.currentMaxIndex === index ? 'current-max' : ''}`}
             style={{
               height: `${(value / maxValue) * 300}px`,
@@ -54,6 +58,7 @@ const SortingVisualization = ({
           </div>
         ))}
         
+        {/* Bubble Sort highlight */}
         {selectedAlgorithm === 'bubbleSort' && 
          currentData.swapping && 
          currentData.swapping.length === 2 && (
@@ -66,6 +71,7 @@ const SortingVisualization = ({
           />
         )}
         
+        {/* Merge Sort highlight */}
         {selectedAlgorithm === 'mergeSort' && 
          currentData.range && 
          currentData.range.length === 2 && (
@@ -74,6 +80,19 @@ const SortingVisualization = ({
             style={{
               left: `${currentData.range[0] * totalBarWidth}px`,
               width: `${(currentData.range[1] - currentData.range[0] + 1) * totalBarWidth - gap}px`
+            }}
+          />
+        )}
+        
+        {/* Quick Sort highlight */}
+        {selectedAlgorithm === 'quickSort' && 
+         currentData.partitionRange && 
+         currentData.partitionRange.length === 2 && (
+          <div 
+            className="partition-highlight"
+            style={{
+              left: `${currentData.partitionRange[0] * totalBarWidth}px`,
+              width: `${(currentData.partitionRange[1] - currentData.partitionRange[0] + 1) * totalBarWidth - gap}px`
             }}
           />
         )}
