@@ -50,7 +50,7 @@ const SortingVisualization = ({
               (currentData.pivotIndex === index) ? 'pivot-element' : ''
             } ${currentData.currentMaxIndex === index ? 'current-max' : ''}`}
             style={{
-              height: `${(value / maxValue) * 300}px`,
+              height: `${(value / maxValue) * 300}px`, 
               width: `${barWidth}px`
             }}
           >

@@ -31,16 +31,18 @@ const useInsertionSort = () => {
           array: [...workingArray],
           comparing: [j, j + 1],
           swapping: [],
-          keyIndex: i,
+          keyIndex: j+1,
           explanation: `Comparing key ${key} with element at index ${j} (${workingArray[j]})`
         });
 
+        let t = workingArray[j+1];
         workingArray[j + 1] = workingArray[j];
+        workingArray[j] = t;
         steps.push({
           array: [...workingArray],
           comparing: [],
-          swapping: [j, j + 1],
-          keyIndex: i,
+          swapping: [j + 1],
+          keyIndex: j,
           explanation: `Shifting element ${workingArray[j]} from index ${j} to ${j + 1}`
         });
 
@@ -51,7 +53,7 @@ const useInsertionSort = () => {
       steps.push({
         array: [...workingArray],
         comparing: [],
-        swapping: [j + 1],
+        swapping: [j,j + 1],
         keyIndex: -1,
         explanation: `Inserting key ${key} at correct position ${j + 1}`
       });

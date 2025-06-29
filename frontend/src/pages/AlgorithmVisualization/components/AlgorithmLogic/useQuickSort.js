@@ -16,27 +16,54 @@ const useQuickSort = () => {
 
     function quickSort(start, end) {
       if (start < end) {
+        if(end-start+1<=2){
+
+          steps.push({
+            array: [...workingArray],
+            comparing: [start,end],
+            swapping: [],
+            pivotIndex: -1,
+            partitionRange: [start, end],
+            explanation: `Comparing element at ${start} (${workingArray[start]}) with pivot ${workingArray[end]}`
+          });
+
+          if(workingArray[start] > workingArray[end]){
+            [workingArray[start], workingArray[end]] = [workingArray[end], workingArray[start]];
+            steps.push({
+              array: [...workingArray],
+              comparing: [],
+              swapping: [start, end],
+              pivotIndex: -1,
+              partitionRange: [start, end],
+              explanation: `Swapping elements at ${start} and ${end}`
+            });
+          }
+          return;
+        }
         const partitionIndex = partition(start, end);
-        
-        steps.push({
-          array: [...workingArray],
-          comparing: [],
-          swapping: [],
-          pivotIndex: -1,
-          partitionRange: [start, partitionIndex - 1],
-          explanation: `Sorting left partition from ${start} to ${partitionIndex - 1}`
-        });
-        quickSort(start, partitionIndex - 1);
-        
-        steps.push({
-          array: [...workingArray],
-          comparing: [],
-          swapping: [],
-          pivotIndex: -1,
-          partitionRange: [partitionIndex + 1, end],
-          explanation: `Sorting right partition from ${partitionIndex + 1} to ${end}`
-        });
-        quickSort(partitionIndex + 1, end);
+        if(partitionIndex-1 > start){
+          steps.push({
+            array: [...workingArray],
+            comparing: [],
+            swapping: [],
+            pivotIndex: -1,
+            partitionRange: [start, partitionIndex - 1],
+            explanation: `Sorting left partition from ${start} to ${partitionIndex - 1}`
+          });
+          quickSort(start, partitionIndex - 1);
+        }
+
+        if(partitionIndex+1 < end){
+          steps.push({
+            array: [...workingArray],
+            comparing: [],
+            swapping: [],
+            pivotIndex: -1,
+            partitionRange: [partitionIndex + 1, end],
+            explanation: `Sorting right partition from ${partitionIndex + 1} to ${end}`
+          });
+          quickSort(partitionIndex + 1, end);
+        }
       }
     }
 
